@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CarPark_SystemModel2StoreContainer" CdmEntityContainer="CarPark_SystemEntities9">
+    <EntitySetMapping Name="C3build">
+      <EntityTypeMapping TypeName="CarPark_SystemModel2.C3build">
+        <MappingFragment StoreEntitySet="3build">
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="CarPlate" ColumnName="CarPlate" />
+          <ScalarProperty Name="Date_Time" ColumnName="Date_Time" />
+          <ScalarProperty Name="Zone" ColumnName="Zone" />
+          <ScalarProperty Name="Gate" ColumnName="Gate" />
+          <ScalarProperty Name="Carin_out" ColumnName="Carin/out" />
+          <ScalarProperty Name="avg_h" ColumnName="avg/h" />
+          <ScalarProperty Name="avg_m" ColumnName="avg/m" />
+          <ScalarProperty Name="F9" ColumnName="F9" />
+          <ScalarProperty Name="avg_sty" ColumnName="avg sty" />
+          <ScalarProperty Name="no_id" ColumnName="no_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="C3in1data">
+      <EntityTypeMapping TypeName="CarPark_SystemModel2.C3in1data">
+        <MappingFragment StoreEntitySet="3in1data">
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="CarPlate" ColumnName="CarPlate" />
+          <ScalarProperty Name="Date_Time" ColumnName="Date/Time" />
+          <ScalarProperty Name="zone" ColumnName="zone" />
+          <ScalarProperty Name="gate" ColumnName="gate" />
+          <ScalarProperty Name="in_out" ColumnName="in/out" />
+          <ScalarProperty Name="avg_h" ColumnName="avg/h" />
+          <ScalarProperty Name="avg__m" ColumnName="avg /m" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+          <ScalarProperty Name="No_id" ColumnName="No_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inout_time_off">
+      <EntityTypeMapping TypeName="CarPark_SystemModel2.inout_time_off">
+        <MappingFragment StoreEntitySet="inout_time_off">
+          <ScalarProperty Name="CarPlate" ColumnName="CarPlate" />
+          <ScalarProperty Name="Date_Time" ColumnName="Date/Time" />
+          <ScalarProperty Name="zone" ColumnName="zone" />
+          <ScalarProperty Name="gate" ColumnName="gate" />
+          <ScalarProperty Name="in_out" ColumnName="in/out" />
+          <ScalarProperty Name="avg_h" ColumnName="avg/h" />
+          <ScalarProperty Name="avg__m" ColumnName="avg /m" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+          <ScalarProperty Name="No_id" ColumnName="No_id" />
+          <ScalarProperty Name="Max_all" ColumnName="Max_all" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

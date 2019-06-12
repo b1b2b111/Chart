@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CarPark_SystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="3build">
+    <Key>
+      <PropertyRef Name="no_id" />
+    </Key>
+    <Property Name="Location" Type="nvarchar" MaxLength="255" />
+    <Property Name="CarPlate" Type="nvarchar" MaxLength="255" />
+    <Property Name="Date_Time" Type="datetime" />
+    <Property Name="Zone" Type="nvarchar" MaxLength="255" />
+    <Property Name="Gate" Type="float" />
+    <Property Name="Carin/out" Type="nvarchar" MaxLength="255" />
+    <Property Name="avg/h" Type="float" />
+    <Property Name="avg/m" Type="float" />
+    <Property Name="F9" Type="nvarchar" MaxLength="255" />
+    <Property Name="avg sty" Type="float" />
+    <Property Name="no_id" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="inout_time_off">
+    <Key>
+      <PropertyRef Name="No_id" />
+    </Key>
+    <Property Name="CarPlate" Type="nvarchar" MaxLength="255" />
+    <Property Name="Date/Time" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="zone" Type="nvarchar" MaxLength="255" />
+    <Property Name="gate" Type="float" />
+    <Property Name="in/out" Type="nvarchar" MaxLength="255" />
+    <Property Name="avg/h" Type="nvarchar" MaxLength="255" />
+    <Property Name="avg /m" Type="nvarchar" MaxLength="255" />
+    <Property Name="Capacity" Type="float" />
+    <Property Name="No_id" Type="float" Nullable="false" />
+    <Property Name="Max_all" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityContainer Name="CarPark_SystemModelStoreContainer">
+    <EntitySet Name="3build" EntityType="Self.3build" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="inout_time_off" EntityType="Self.inout_time_off" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

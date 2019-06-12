@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CarPark_SystemModel2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C3build">
+    <Key>
+      <PropertyRef Name="no_id" />
+    </Key>
+    <Property Name="Location" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CarPlate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Date_Time" Type="DateTime" Precision="3" />
+    <Property Name="Zone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Gate" Type="Double" />
+    <Property Name="Carin_out" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="avg_h" Type="Double" />
+    <Property Name="avg_m" Type="Double" />
+    <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="avg_sty" Type="Double" />
+    <Property Name="no_id" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="C3in1data">
+    <Key>
+      <PropertyRef Name="No_id" />
+    </Key>
+    <Property Name="Location" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CarPlate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Date_Time" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="zone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="gate" Type="Double" />
+    <Property Name="in_out" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="avg_h" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="avg__m" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Capacity" Type="Double" />
+    <Property Name="No_id" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="inout_time_off">
+    <Key>
+      <PropertyRef Name="No_id" />
+    </Key>
+    <Property Name="CarPlate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Date_Time" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="zone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="gate" Type="Double" />
+    <Property Name="in_out" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="avg_h" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="avg__m" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Capacity" Type="Double" />
+    <Property Name="No_id" Type="Double" Nullable="false" />
+    <Property Name="Max_all" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="CarPark_SystemEntities9" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C3build" EntityType="Self.C3build" />
+    <EntitySet Name="C3in1data" EntityType="Self.C3in1data" />
+    <EntitySet Name="inout_time_off" EntityType="Self.inout_time_off" />
+  </EntityContainer>
+</Schema>

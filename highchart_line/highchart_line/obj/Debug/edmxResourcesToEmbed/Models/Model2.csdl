@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CarPark_SystemModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="test">
+    <Key>
+      <PropertyRef Name="primaryid" />
+    </Key>
+    <Property Name="dateandtime" Type="DateTime" Precision="3" />
+    <Property Name="primaryid" Type="Double" Nullable="false" />
+    <Property Name="cap" Type="Double" />
+  </EntityType>
+  <EntityContainer Name="CarPark_SystemEntities7" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tests" EntityType="Self.test" />
+  </EntityContainer>
+</Schema>

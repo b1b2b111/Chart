@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CarPark_SystemModel1StoreContainer" CdmEntityContainer="CarPark_SystemEntities7">
+    <EntitySetMapping Name="tests">
+      <EntityTypeMapping TypeName="CarPark_SystemModel1.test">
+        <MappingFragment StoreEntitySet="test">
+          <ScalarProperty Name="dateandtime" ColumnName="dateandtime" />
+          <ScalarProperty Name="primaryid" ColumnName="primaryid" />
+          <ScalarProperty Name="cap" ColumnName="cap" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

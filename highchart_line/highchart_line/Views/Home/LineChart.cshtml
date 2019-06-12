@@ -1,0 +1,262 @@
+﻿@model List<highchart_line.Models.C3in1data>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+<head>
+   <h3> Average in-time by day </h3>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<div class="col-lg-12">
+
+    <div class="tabs-container">
+        <div active="vm.tab">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a data-toggle="tab" href="#office">Office</a>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#shopping">Shopping</a>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#residential">Residential</a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="office" class="tab-pane fade in active">
+                    <canvas id="myChart"></canvas>
+                </div>
+                <div id="shopping" class="tab-pane fade">
+                    <canvas id="myChart2"></canvas>
+                </div>
+                <div id="residential" class="tab-pane fade">
+                    <canvas id="myChart3"></canvas>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+
+    <script>
+   
+        var offcap = @Html.Raw(Json.Encode(ViewBag.offCAP));
+        var shoppingcap = @Html.Raw(Json.Encode(ViewBag.shoppingCAP));
+        var rescap = @Html.Raw(Json.Encode(ViewBag.resCAP));
+
+        var offdt = @Html.Raw(Json.Encode(ViewBag.offDT));
+        var shoppingdt = @Html.Raw(Json.Encode(ViewBag.shoppingDT));
+        var resdt = @Html.Raw(Json.Encode(ViewBag.resDT));
+        
+        let myChart = document.getElementById('myChart').getContext('2d');
+        let myChart2 = document.getElementById('myChart2').getContext('2d');
+        let myChart3 = document.getElementById('myChart3').getContext('2d');
+
+        // Global Options
+        Chart.defaults.global.defaultFontFamily = 'Lato';
+        Chart.defaults.global.defaultFontSize = 18;
+        Chart.defaults.global.defaultFontColor = '#777';
+
+        let massPopChart = new Chart(myChart,
+            {
+                type: 'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+                data: {
+                    labels: offdt,
+                    datasets: [
+                        {
+                            label: 'Office',
+                            data: offcap,
+                            //backgroundColor:'green',
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.6)',
+                                'rgba(54, 162, 235, 0.6)',
+                                'rgba(255, 206, 86, 0.6)',
+                                'rgba(75, 192, 192, 0.6)',
+                                'rgba(153, 102, 255, 0.6)',
+                                'rgba(255, 159, 64, 0.6)',
+                                'rgba(255, 99, 132, 0.6)'
+                            ],
+                            borderWidth: 1,
+                            borderColor: '#777',
+                            hoverBorderWidth: 3,
+                            hoverBorderColor: '#000'
+                        }
+                    ]
+                },
+
+                options: {
+                    scales: {
+                        yAxes: [
+                            {
+                                ticks: {
+                                    max: 120,
+                                    min: 0
+
+                                }
+                            }
+                        ],
+
+                        title: {
+                            display: true,
+                            text: 'Average in-time by day',
+                            fontSize: 25
+                        },
+                        legend: {
+                            display: true,
+                            position: 'right',
+                            labels: {
+                                fontColor: '#000'
+                            }
+                        },
+                        layout: {
+                            padding: {
+                                left: 50,
+                                right: 0,
+                                bottom: 0,
+                                top: 0
+                            }
+                        },
+                        tooltips: {
+                            enabled: true
+                        }
+                    }
+                }
+            });
+
+
+        let massPopChart2 = new Chart(myChart2,
+            {
+                type: 'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+                data: {
+                    labels: shoppingdt,
+                    datasets: [
+                        {
+                            label: 'Shopping',
+                            data: shoppingcap,
+                            //backgroundColor:'green',
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.6)',
+                                'rgba(54, 162, 235, 0.6)',
+                                'rgba(255, 206, 86, 0.6)',
+                                'rgba(75, 192, 192, 0.6)',
+                                'rgba(153, 102, 255, 0.6)',
+                                'rgba(255, 159, 64, 0.6)',
+                                'rgba(255, 99, 132, 0.6)'
+                            ],
+                            borderWidth: 1,
+                            borderColor: '#777',
+                            hoverBorderWidth: 3,
+                            hoverBorderColor: '#000'
+                        }
+                    ]
+                },
+
+                options: {
+                    scales: {
+                        yAxes: [
+                            {
+                                ticks: {
+                                    max: 120,
+                                    min: 0
+
+                                }
+                            }
+                        ],
+
+                        title: {
+                            display: true,
+                            text: 'Average in-time by day',
+                            fontSize: 25
+                        },
+                        legend: {
+                            display: true,
+                            position: 'right',
+                            labels: {
+                                fontColor: '#000'
+                            }
+                        },
+                        layout: {
+                            padding: {
+                                left: 50,
+                                right: 0,
+                                bottom: 0,
+                                top: 0
+                            }
+                        },
+                        tooltips: {
+                            enabled: true
+                        }
+                    }
+                }
+            });
+
+        let massPopChart3 = new Chart(myChart3,
+            {
+                type: 'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+                data: {
+                    labels: resdt,
+                    datasets: [
+                        {
+                            label: 'Residential',
+                            data: rescap,
+                            //backgroundColor:'green',
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.6)',
+                                'rgba(54, 162, 235, 0.6)',
+                                'rgba(255, 206, 86, 0.6)',
+                                'rgba(75, 192, 192, 0.6)',
+                                'rgba(153, 102, 255, 0.6)',
+                                'rgba(255, 159, 64, 0.6)',
+                                'rgba(255, 99, 132, 0.6)'
+                            ],
+                            borderWidth: 1,
+                            borderColor: '#777',
+                            hoverBorderWidth: 3,
+                            hoverBorderColor: '#000'
+                        }
+                    ]
+                },
+
+                options: {
+                    scales: {
+                        yAxes: [
+                            {
+                                ticks: {
+                                    max: 120,
+                                    min: 0
+
+                                }
+                            }
+                        ],
+
+                        title: {
+                            display: true,
+                            text: 'Average in-time by day',
+                            fontSize: 25
+                        },
+                        legend: {
+                            display: true,
+                            position: 'right',
+                            labels: {
+                                fontColor: '#000'
+                            }
+                        },
+                        layout: {
+                            padding: {
+                                left: 50,
+                                right: 0,
+                                bottom: 0,
+                                top: 0
+                            }
+                        },
+                        tooltips: {
+                            enabled: true
+                        }
+                    }
+                }
+            });
+    </script>
+
